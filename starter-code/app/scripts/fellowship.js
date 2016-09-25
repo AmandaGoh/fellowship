@@ -95,6 +95,7 @@ keepItSecretKeepItSafe()
 function makeBuddies() {
   var buddiesTag = document.createElement('aside')
   var buddiesList = document.createElement('ul')
+  buddiesList.id = 'buddies-list'
 
   for (var i = 0; i < buddies.length; i++){
     var buddiesItem = document.createElement('li')
@@ -110,46 +111,85 @@ function makeBuddies() {
   // insert your aside as a child element of rivendell
 }
 
-makeBuddies();
+makeBuddies()
 
 // Part 5
 
 
 function beautifulStranger() {
+  var buddiesL = document.querySelector('#buddies-list')
+  var strider = buddiesL.querySelector('li:nth-Child(4)')
+  strider.textContent = 'Aragorn'
   // change the 'Strider' textnode to 'Aragorn'
 }
 
+beautifulStranger()
 
 // Part 6
 
 function leaveTheShire() {
+  var hobbitsAll = document.querySelectorAll('.hobbit')
+  var rivendell = document.querySelector('article:nth-Child(2)')
+  for (var i = 0; i < hobbitsAll.length; i++) {
+    rivendell.appendChild(hobbitsAll[i])
+  }
   // assemble the hobbits and move them to Rivendell
 }
 
-
+leaveTheShire()
 // Part 7
 
 
 function forgeTheFellowShip() {
+  var theFellowship = document.createElement('div')
+  theFellowship.id = 'the-fellowship'
+  var rivendell = document.querySelector('article:nth-Child(2)')
+  rivendell.appendChild(theFellowship)
+
+  var hobbitsAll = document.querySelectorAll('.hobbit')
+  for (var i = 0; i < hobbitsAll.length; i++) {
+  theFellowship.appendChild(hobbitsAll[i])
+  alert(hobbitsAll[i].textContent + ' has joined the Fellowship!')
+
+  if (i === hobbitsAll.length - 1) { break }
+  }
+
+  var buddiesAll = document.querySelectorAll('#buddies-list')
+  for (var x = 0; x < buddiesAll.length; x++) {
+  theFellowship.appendChild(buddiesAll[x])
+  alert(buddiesAll[x].textContent + ' has joined the Fellowship!')
+
+  if (x === buddiesAll.length - 1) { break }
+  }
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
 }
 
+forgeTheFellowShip()
+
 
 // Part 8
 
 
-function theBalrog() {
+function theBalrog () {
+  var buddiesL = document.querySelector('#buddies-list')
+  var gandalf = buddiesL.querySelector('li:nth-child(1)')
+  gandalf.textContent = 'Gandalf the White'
+  gandalf.style.backgroundColor = 'white'
+  gandalf.style.border = '1px solid grey'
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
 }
 
+theBalrog()
 
 // Part 9
 
 function hornOfGondor() {
+
+  
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
