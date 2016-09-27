@@ -151,15 +151,16 @@ function forgeTheFellowShip() {
   theFellowship.appendChild(hobbitsAll[i])
   alert(hobbitsAll[i].textContent + ' has joined the Fellowship!')
 
-  if (i === hobbitsAll.length - 1) { break }
+  // if (i === hobbitsAll.length - 1) { break }
   }
 
-  var buddiesAll = document.querySelectorAll('#buddies-list')
-  for (var x = 0; x < buddiesAll.length; x++) {
-  theFellowship.appendChild(buddiesAll[x])
-  alert(buddiesAll[x].textContent + ' has joined the Fellowship!')
+  var buddiesL = document.querySelector('#buddies-list')
+  var buddyItem = buddiesL.querySelectorAll('li')
+  for (var x = 0; x < buddyItem.length; x++) {
+  theFellowship.appendChild(buddyItem[x])
+  alert(buddyItem[x].textContent + ' has joined the Fellowship!')
 
-  if (x === buddiesAll.length - 1) { break }
+  // if (x === buddyItem.length - 1) { break }
   }
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
@@ -173,8 +174,9 @@ forgeTheFellowShip()
 
 
 function theBalrog () {
-  var buddiesL = document.querySelector('#buddies-list')
-  var gandalf = buddiesL.querySelector('li:nth-child(1)')
+  var theFellowship = document.querySelector('#the-fellowship')
+  // var buddiesL = document.querySelector('#buddies-list')
+  var gandalf = theFellowship.querySelector('li:nth-child(5)')
   gandalf.textContent = 'Gandalf the White'
   gandalf.style.backgroundColor = 'white'
   gandalf.style.border = '1px solid grey'
@@ -188,13 +190,20 @@ theBalrog()
 // Part 9
 
 function hornOfGondor() {
+alert('The Horn of Gondor has been blown!')
+alert("Boromir's been killed by the Uruk-hai!")
 
-  
+var theFellowship = document.querySelector('#the-fellowship')
+var boromir = theFellowship.querySelector('li:nth-child(9)')
+boromir.style.textDecoration = 'line-through'
+boromir.remove()
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
 }
+
+hornOfGondor()
 
 
 // Part 10
