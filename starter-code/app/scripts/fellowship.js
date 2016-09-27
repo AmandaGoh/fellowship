@@ -209,11 +209,22 @@ hornOfGondor()
 // Part 10
 
 function itsDangerousToGoAlone(){
+
+  var mordor = document.querySelector('article:nth-Child(3)')
+  var theFellowship = document.querySelector('#the-fellowship')
+  var frodo = theFellowship.querySelector('li:nth-child(1)')
+  var sam = theFellowship.querySelector('li:nth-child(2)')
+  mordor.appendChild(frodo)
+  mordor.appendChild(sam)
+
+  var mountDoom = document.createElement('div')
+  mountDoom.id = 'mount-doom'
+  mordor.appendChild(mountDoom)
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
 }
 
-
+itsDangerousToGoAlone()
 // Part 11
 
 function weWantsIt() {
