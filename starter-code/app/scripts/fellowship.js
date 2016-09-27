@@ -247,7 +247,23 @@ weWantsIt()
 // Part 12
 
 function thereAndBackAgain() {
+  var gollum = document.querySelector('#gollum')
+  var theRing = document.querySelector('#the-ring')
+  gollum.remove()
+  theRing.remove()
+
+  var mordor = document.querySelector('article:nth-Child(3)')
+
+  mordor.style.setProperty('background','url("")')
+
+  var hobbitsAll = document.querySelectorAll('.hobbit')
+  var shire = document.querySelector('article:first-child')
+  for (var i = 0; i < hobbitsAll.length; i++) {
+  shire.appendChild(hobbitsAll[i])
+  }
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
 }
+
+thereAndBackAgain()
